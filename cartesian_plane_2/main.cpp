@@ -14,7 +14,7 @@ void init(void)
 {
 	// color de la ventana, negro
 	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-	//  proyección de la imagen en la ventana devisualización
+	//  proyecciÃ³n de la imagen en la ventana devisualizaciÃ³n
 }
 
 void drawSquare() {
@@ -127,7 +127,7 @@ int main(int argc, char** argv)
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGBA);//selecciona el RGB y single buffering
 	glutInitWindowSize(512, 512);//fija el tamanho de la ventana
 	glutInitWindowPosition(400, 150);//fija la posicion de la ventana
-	glutCreateWindow("tarea#2");//crea la ventana con el nombre							
+	glutCreateWindow("cartesian plane 2");//crea la ventana con el nombre							
 	//Llamar a la funcion init
 	init();
 	//declara los callbacks
