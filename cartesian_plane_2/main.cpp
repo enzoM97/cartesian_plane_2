@@ -91,22 +91,23 @@ void drawCartesianPlane(void)
 {
 	int width = glutGet(GLUT_WINDOW_WIDTH);
 	int height = glutGet(GLUT_WINDOW_HEIGHT);
+	float x = -1.0, y = 1.0, z = 0.0;
+
 	glClear(GL_COLOR_BUFFER_BIT);
 	glPointSize(1.0);
-	// vertical axis
-	for (float i = -1.0; i < 1.0; i += 0.02) {
-		glColor3f(rand() / ((float)RAND_MAX + 1), rand() / ((float)RAND_MAX + 1), rand() / ((float)RAND_MAX + 1));
+
+	glBegin(GL_POINTS);
+	for (float i = -1.0; i < 1.0; i += 0.01) {
 		glBegin(GL_POINTS);
-		glVertex2d(0, i);
-		glEnd();
+		glColor3f(x, y, z);
+		glVertex2d(x, 0);
+		glVertex2d(0, y);
+		x += 0.02f;
+		y -= 0.02f;
+		z += 0.02f;
 	}
-	// horizontal axis
-	for (float i = -1.0; i < 1.0; i += 0.02) {
-		glColor3f(rand() / ((float)RAND_MAX + 1), rand() / ((float)RAND_MAX + 1), rand() / ((float)RAND_MAX + 1));	
-		glBegin(GL_POINTS);
-		glVertex2d(i, 0);
-		glEnd();
-	}
+	glEnd();
+
 	// first plane
 	drawHexagon();
 	// second plane
